@@ -1,0 +1,83 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Home</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+    <section class="fondo-gris">
+        <h2>Sobre nuestro sitio</h2>
+       <br><br><br><br><br><br>
+	
+
+ <div class="flex flex-col">
+      <div class="-my-2  text-xl  overflow-x-auto sm:-mx-6 lg:-mx-8">
+Bandeja de : {{usuario.nombre}} <br><br>
+     Mi Bandeja de Mensajes 
+ <br> Soy Usuario de id: {{id}} <br>
+
+   
+
+   </div>
+
+<br>   <br>
+
+ <table class="border-red-900  bg-gray-300" border="1">
+		<caption>Listado de Todas Las Mensajes <br></caption>
+		<tr >
+			<th WIDTH="150"  HEIGHT="50">numero de mensaje</th>
+			<th>detalle del mensaje</th>
+			
+		</tr>
+				
+			{{#each mensajes}}
+		<tr>
+<td  align="center" > {{@index}} </td>
+<td  align="center"  WIDTH="150"  HEIGHT="50" >{{this}} </td>
+
+		</tr>	
+			{{/each}}  
+		
+
+		</table>
+
+
+
+<br><br>
+<div class=" text-indigo-600 hover:text-indigo-900  py-2 px-4  text-center text-3xl  ">
+	
+    <a href="/operaciones" class="text-indigo-600 hover:text-indigo-900">
+Ir a buscar otras Operaciones para Observar  </a>
+<br>
+</div>
+
+
+
+ <br><br><br>
+ <div class="flex flex-col">
+      <div class="-my-2  text-3xl  overflow-x-auto sm:-mx-6 lg:-mx-8">
+         <a href= {{link}}> {{link_detalle}}</a>
+    </div>
+
+
+
+ <br><br><br><br>
+<br><br><br><br>
+        <ol>
+            <li>Somos una empresa joven</li>
+            <li>Altos valores</li>
+            <li>Decimos lo que la gente quiere escuchar</li>
+        </ol>
+
+        Para saber más sobre nuestros valores presionar <a href="/nuestros-valores">acá</a>
+    </section>
+
+    <section>
+        <h2>Sobre nuestros clientes</h2>
+
+        <p>un bonito texto sobre nuestros clientes.</p>
+
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

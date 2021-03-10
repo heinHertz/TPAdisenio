@@ -1,0 +1,152 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Home</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+    <section class="fondo-gris">
+        <h2>Agregar Operacion Nueva</h2>
+
+       
+        <form class="formulario-ej " action="/operaciones/cargar" method="POST">
+            <div>
+                <label>Detalle Operacion:  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="detalle" placeholder="Ingrese el detalle de operacion" required>
+            </div>
+ <div>
+<br>
+<br> <label>FECHA DE LA OPERACION</label>
+<br>
+<br> 
+   </div>
+ 	<div>
+                <label>Fecha de la de la Operacion:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" min="2010-1-1" name="fecha" placeholder="Ingrese la Fecha de operacion" required>
+            </div>
+		
+<br> <br> 
+<br> 
+
+
+            <div>
+                <label>Valor Total operacion:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" name="valortotal" placeholder="ingrese el valor Total" min="1" required>
+            </div>
+<br>
+<br> 
+	 <div>
+                <label>Medio de Pago de la Operacion:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+               <select name="mediopago" id="mediopago">
+    <option value="TARJETADEBITO">TARJETADEBITO</option>
+    <option value="TARJETACREDITO">TARJETACREDITO</option>
+     <option value="EFECTIVO">EFECTIVO</option>
+     <option value="DINEROCUENTA">DINEROCUENTA</option>
+     <option value="CAJERO">CAJERO</option>
+  	  </select>
+            </div>
+<br>
+<br> Presupuestos
+            <div>
+                <label>Ingrese Cantidad Presupuestos por Operacion:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="cantPresupuesto" placeholder="Cantidad de Presupuestos" required>
+            </div>
+<br>
+<br> 
+            <div>
+                <label>Ingrese Etiqueta:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="etiqueta" placeholder="Etiqueta" required>
+            </div>
+
+<br>
+<br>
+		DOCUMENTO
+<br>
+		
+ 		<div>
+                <label>Ingrese Nombre Documento:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="nombredocumento" placeholder="Nombre documento" required >
+ 		</div>
+
+		<div>
+                <label>Ingrese Tipo de Documento:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="tipodocu" id="tipodocu">
+    <option value="FACTURA">FACTURA</option>
+    <option value="NOTA_DE_DEBITO">NOTA_DE_DEBITO</option>
+    <option value="NOTA_DE_CREDITO">NOTA_DE_CREDITO</option>
+     <option value="RECIBO">RECIBO</option>
+     <option value="CHEQUE">CHEQUE</option>
+     <option value="PAGARE">PAGARE</option>
+     <option value="ORDEN_DE_COMPRA">ORDEN_DE_COMPRA</option>
+     <option value="BOLETA_DE_DEPOSITO_BANCARIO">BOLETA_DE_DEPOSITO_BANCARIO</option>
+     <option value="REMITO">REMITO</option>
+  </select>
+ </div>
+
+
+<br>
+<br><br>
+DATOS DE PROVEEDOR
+<br><br>
+ 		<div>
+                <label>Ingrese Nombre de Proveedor </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="nombreproveedor" placeholder="Nombre de Proveedor" required >
+ 		</div> 
+<br>          <div>
+                <label>Ingrese Dni de Proveedor </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="dniproveedor" placeholder="Dni de Proveedor" required>
+ 		</div> 
+ 	<br> 	
+		<div>
+                <label>Ingrese Direccion de Proveedor  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="direccionproveedor" placeholder="Direccion de Proveedor" required>
+ 		</div> 
+<br>
+
+		<div>
+                <label> Pais de Proveedor : Argentina </label>
+              	</div>  
+<br>	
+
+
+               
+                <div class="multiple-choice rounded-full bg-blue-200">
+Ciudad y Provincia del Proveedor: 
+                    <select name="ciudadproveedor">
+                    {{#ciudades}}
+                      <option value="{{id}}">{{nombre}}, {{#provincia}} {{nombre}} {{/provincia}}</option>
+                    {{/ciudades}}
+                    </select>
+
+<br>	 Moneda del Proveedor:
+                    <select name="monedaproveedor">
+                    {{#moneda}}
+                        <option value="{{id}}">{{descripcion}} {{simbolo}}</option>
+                    {{/moneda}}
+                    </select>
+                </div>
+     <br>	
+<br>
+<br>
+            <button>Agregar Operacion</button>
+
+        </form>
+        <ol>
+            <li>Somos una empresa joven</li>
+            <li>Altos valores</li>
+            <li>Decimos lo que la gente quiere escuchar</li>
+        </ol>
+
+        Para saber más sobre nuestros valores presionar <a href="/nuestros-valores">acá</a>
+    </section>
+
+    <section>
+        <h2>Sobre nuestros clientes</h2>
+
+        <p>un bonito texto sobre nuestros clientes.</p>
+
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

@@ -1,0 +1,429 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Home</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+    <section class="fondo-gris">
+        <h2>Gesoc-   Informacion Disponible de Operacion </h2>
+
+
+<br><br>
+<br><br>
+<div class="rounded-full py-2 px-4  text-left text-3xl  ">Datos de la Operacion</div>
+<br><br>
+ <div class="flex flex-col">
+      <div class="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2  align-middle inline-block min-w-0 sm:px-6 lg:px-8">
+          <div class=" shadow overflow-hidden border-b border-indigo-800 sm:rounded-lg">
+            <table class=" min-w-0 divide-y divide-indigo-800">
+              <thead>
+                <tr class="bg-blue-200">
+                  <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Detalles
+                  </th>
+                 <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Valor Total
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Validar
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    presupuestos
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Etiqueta
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Medio de Pago
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                   Fecha
+                  </th>
+                </tr>
+              </thead>
+              <tbody class=" bg-white divide-y divide-gray-200">
+            {{#operacion}}  
+                <tr class="hover:bg-blue-100"  >        
+		<td class=" px-2 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                          {{detalle}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         detalle
+                        </div>
+                      </div>
+                    </div>
+                  </td>                <!-- More rows... -->
+ 		<td class=" px-2 py-4 whitespace-no-wrap">      <!-- .valor total.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-sm leading-5 font-medium text-gray-900">
+                         {{valorTotal}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         valor total
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-2 py-4 whitespace-no-wrap">      <!-- validar-->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-40 ml-0 text-center text-sm leading-5 font-medium text-gray-900">
+                        Tiene que tener {{cantidadPresupuestosCompra}}
+                        </div>
+                        <div class="text-sm leading-5 text-center text-gray-500">
+                         Presupuestos para Validar
+                        </div>
+                      </div>
+                    </div>
+                  </td>    
+		<td class=" px-2 py-4 whitespace-no-wrap">      <!-- cantidad presupuestos.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-center text-sm leading-5 font-medium text-gray-900">
+                         Tiene {{sizePresupuestos}}
+                        </div>
+                        <div class="text-sm text-center leading-5 text-gray-500">
+                         Cantidad Presupuestos
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-2 py-4 whitespace-no-wrap">      <!-- etiqueta -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-24 text-sm text-center leading-5 font-medium text-gray-900">
+                          {{etiqueta}}
+                        </div>
+                        <div class="text-sm text-center leading-5 text-gray-500">
+                         etiqueta
+                        </div>
+                      </div>
+                    </div>
+                  </td>      
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- medio de pago -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                          {{medioPago}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         medios de pago
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+		<td class=" px-2 py-4 whitespace-no-wrap">      <!-- fecha de operacion -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-24 text-sm text-center leading-5 font-medium text-gray-900">
+                          {{fechaOperacion}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         fecha de operacion
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+
+                </tr>
+            {{/operacion}}   
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+<br><br>
+<br><br>
+<div class="rounded-full py-2 px-4  text-left text-3xl ">Datos del Documento</div>
+<br><br>
+ <div class="flex flex-col">
+      <div class="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2  align-middle inline-block min-w-0 sm:px-6 lg:px-8">
+          <div class=" shadow overflow-hidden border-b border-indigo-800 sm:rounded-lg">
+            <table class=" min-w-0 divide-y divide-indigo-800">
+              <thead>
+                <tr class="bg-red-400">
+                  <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Nombre documento
+                  </th>
+                 <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Tipo Documento
+                  </th>
+		
+                </tr>
+              </thead>
+              <tbody class=" bg-white divide-y divide-gray-200">
+            {{#operacion}}  
+                <tr class="hover:bg-blue-100"  >      
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                         {{operacion.documento.nombre}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         nombre documento
+                        </div>
+                      </div>
+                    </div>
+                  </td>                <!-- More rows... -->
+ 		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .valor total.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-sm leading-5 font-medium text-gray-900">
+                         {{operacion.documento.tipoDocumento}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         tipo documento
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		
+                </tr>
+            {{/operacion}}   
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<br><br><br><br>
+<div class="rounded-full py-2 px-4  text-left text-3xl ">Datos del proveedor</div>
+<br><br>
+ <div class="flex flex-col">
+      <div class="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2  align-middle inline-block min-w-0 sm:px-6 lg:px-8">
+          <div class=" shadow overflow-hidden border-b border-indigo-800 sm:rounded-lg">
+            <table class=" min-w-0 divide-y divide-indigo-800">
+              <thead>
+                <tr class="bg-yellow-400">
+                  <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Nombre Proveedor
+                  </th>
+                 <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Dni
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Direccion
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Ciudad de Proveedor
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Provincia Proveedor
+                  </th>
+                </tr>
+              </thead>
+              <tbody class=" bg-white divide-y divide-gray-200">
+            {{#operacion}}  
+                <tr class="hover:bg-blue-100"  >     
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                          {{operacion.proveedor.nombre}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         nombre 
+                        </div>
+                      </div>
+                    </div>
+                  </td>                <!-- More rows... -->
+ 		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .valor total.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-sm leading-5 font-medium text-gray-900">
+                       {{operacion.proveedor.dni}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         dni proveedor
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .presupuestos.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-center text-sm leading-5 font-medium text-gray-900">
+                        {{operacion.proveedor.direccionPostal.direccion }}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         direccion fisica
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- etiqueta -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-40 text-sm leading-5 font-medium text-gray-900">
+                      {{operacion.proveedor.direccionPostal.ciudad.nombre }} 
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         ciudad residencia
+                        </div>
+                      </div>
+                    </div>
+                  </td>      
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- medio de pago -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-40 text-sm leading-5 font-medium text-gray-900">
+                         {{operacion.proveedor.direccionPostal.ciudad.provincia.nombre }} 
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         nombre de provincia
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                </tr>
+            {{/operacion}}   
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<br><br>
+<br><br>
+
+<br><br>
+<div class="py-3 px-6  text-center text-3xl  ">
+PRESUPUESTOS
+	<br>	
+  	La Operacion tiene en Total   {{sizePresupuestos}} Presupuestos<br>
+</div>
+{{#operacion.presupuestos}}
+<br><br>
+	 <div class="flex flex-col">
+      <div class="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2  align-middle inline-block min-w-0 sm:px-6 lg:px-8">
+          <div class=" shadow overflow-hidden border-b border-indigo-800 sm:rounded-lg">
+            <table class=" min-w-0 divide-y divide-indigo-800">
+              <thead>
+                <tr class="bg-indigo-400">
+                  <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    indicador
+                  </th>
+                 <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    detalle item
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    valor item 
+                  </th>
+		
+                </tr>
+
+              </thead>
+              <tbody class=" bg-white divide-y divide-gray-200">
+           {{#each items in operacion.presupuestos}} 
+                <tr class="hover:bg-blue-100"  >    
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                         {{@index}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         indicador
+                        </div>
+                      </div>
+                    </div>
+                  </td>                <!-- More rows... -->
+ 		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .valor total.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-sm leading-5 font-medium text-gray-900">
+                         {{this.detalle}} 
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         detalle del item
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .presupuestos.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-center text-sm leading-5 font-medium text-gray-900">
+                       {{valor}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         valor total del item
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		  
+                </tr>
+           {{/each}}   
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+
+	{{/operacion.presupuestos}}
+
+<br><br>
+<div class=" py-2 px-4  text-center text-3xl ">
+	
+  	{{#operacion}}   <a href="/operaciones/{{id_operacion}}/presupuesto" class="text-indigo-600 hover:text-indigo-900">Agregar Presupuestos a Operacion</a>{{/operacion}}  
+<br>
+</div>
+<br>
+
+
+<div class=" py-2 px-4  text-center text-3xl text-indigo-600 hover:text-indigo-900 ">
+<form action="/bandejamensajes" method="POST" id="nameform">
+
+<input name="id_operacion"  type="hidden"  value={{operacion.id_operacion}}>
+
+<button type="submit" form="nameform" value={{operacion.id_operacion}}>Agregarme Como Observador de esta Operacion</button>
+</form>
+</div>
+
+
+
+<br><br><br>
+Retornar a la Busqueda de Operaciones  <a href="/operaciones">Return</a>
+        </p>
+
+
+        <ol>
+            <li>Somos una empresa joven</li>
+            <li>Altos valores</li>
+            <li>Decimos lo que la gente quiere escuchar</li>
+        </ol>
+
+        Para saber más sobre nuestros valores presionar <a href="/nuestros-valores">acá</a>
+    </section>
+
+    <section>
+        <h2>Sobre nuestros clientes</h2>
+
+        <p>un bonito texto sobre nuestros clientes.</p>
+
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

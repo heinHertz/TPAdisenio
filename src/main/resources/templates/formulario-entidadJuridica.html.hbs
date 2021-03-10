@@ -1,0 +1,56 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Agregar Entidad Juridica</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section class="section-formulario">
+
+        <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-3xl">
+            Agregar Nueva Entidad Juridica
+        </h2>
+        <br>
+        <form class="formulario-ej" action="/entidadesJuridicas" method="POST">
+            <div>
+                <label>Nombre:</label>
+                <input type="text" name="nombre" placeholder="Ingrese el nombre" required>
+            </div>
+            <div>
+                <label>Razon social:</label>
+                <input type="text" name="razonSocial" placeholder="ingrese razon social" required>
+            </div>
+            <div>
+                <label>CUIT:</label>
+                <input type="text" name="cuit" placeholder="ingrese CUIT" required>
+            </div>
+            <div>
+                <label>Tipo de Empresa:</label>
+                <div>
+                    <select name="tipoEmpresaHelp">
+                        <option value="EMPRESA">EMPRESA</option>
+                        <option value="OSC">OSC</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label>Direccion Postal:</label>
+                <div class="multiple-choice">
+                    <input type="text" name="direccion" placeholder="ingrese direccion" required>
+                    <select name="ciudadesHelp">
+                    {{#ciudades}}
+                        <option value="{{id}}">{{nombre}}, {{#provincia}} {{nombre}} {{/provincia}}</option>
+                    {{/ciudades}}
+                    </select>
+                    <select name="monedaHelp">
+                    {{#moneda}}
+                        <option value="{{id}}">{{descripcion}} {{simbolo}}</option>
+                    {{/moneda}}
+                    </select>
+                </div>
+            </div>
+            <button>Agregar Entidad</button>
+        </form>
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

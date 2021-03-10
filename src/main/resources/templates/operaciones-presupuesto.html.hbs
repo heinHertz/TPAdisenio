@@ -1,0 +1,245 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Home</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+    <section class="fondo-gris">
+        <h2>Listado de Todas Las Operaciones</h2>
+ 	
+       
+          
+            <br><br>
+{{#operacion}}
+<div class=" py-2 px-4  text-center text-3xl  ">
+A la Operacion de ID: {{operacion.id_operacion}} con detalle {{operacion.detalle}} {{estado}}
+	<br>	
+  	La Operacion tiene en Total   {{sizePresupuestos}} Items en su Presupuesto<br>
+</div>
+{{/operacion}}
+
+
+{{#if editar }}
+ 
+
+
+<h1>Crear Presupuesto y sus Items</h1>
+<br><br><br>
+
+<form action="/operaciones/{{operacion.id_operacion}}/presupuesto" method="POST">
+
+ 
+  
+<div>
+               
+  <p>
+            <table border="1" class="border-collapse border-2 border-gray-500">
+		 <thead>
+<caption>Informacion de Operacion Disponibles<br></caption>
+		<tr class="bg-blue-100">
+			<th class="border border-gray-400 px-4 py-2 text-gray-800"  WIDTH="150" >detalle item</th>
+			<th HEIGHT="50" class="border border-gray-400 px-4 py-2 text-gray-800" WIDTH="150" >valor item</th>
+		</tr>
+ </thead>				
+		<tr>
+<td>
+ <label>Ingrese Detalle del Nuevo Item 1 </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="detalleitem1" placeholder="Detalle Item 1" required>
+ 		</div> 
+ </td>
+<td>
+ <label>Ingrese Valor del Nuevo Item </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" min="1" name="valoritem1" placeholder="Valor Item 1" >
+ 		</div> 
+ </td>
+<td> <select name="agregaritem1">                    
+                      <option value="0">No agregar item </option>
+                      <option value="1">Agregar item </option>
+                    </select>
+<td>
+		</tr>	
+
+ 
+		</table>
+<br><br><br>
+   <table border="1" class="border-collapse border-2 border-gray-500">
+		 <thead>
+<caption>Informacion de Operacion Disponibles<br></caption>
+		<tr class="bg-blue-100">
+			<th class="border border-gray-400 px-4 py-2 text-gray-800"  WIDTH="150" >detalle item</th>
+			<th HEIGHT="50" class="border border-gray-400 px-4 py-2 text-gray-800" WIDTH="150" >valor item</th>
+		</tr>
+ </thead>				
+		<tr>
+<td>
+ <label>Ingrese Detalle del Nuevo Item 2 </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="detalleitem2" placeholder="Detalle Item 2" >
+ 		</div> 
+ </td>
+<td>
+ <label>Ingrese Valor del Nuevo Item 2</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" min="1" name="valoritem2" placeholder="Valor Item 2" >
+ 		</div> 
+ </td>
+<td> <select name="agregaritem2">                    
+                      <option value="2">No agregar item </option>
+                      <option value="3">Agregar item </option>
+                    </select>
+<td>
+		</tr>	 
+		</table>
+<br><br><br>
+ <table border="1" class="border-collapse border-2 border-gray-500">
+		 <thead>
+<caption>Informacion de Operacion Disponibles<br></caption>
+		<tr class="bg-blue-100">
+			<th class="border border-gray-400 px-4 py-2 text-gray-800"  WIDTH="150" >detalle item</th>
+			<th HEIGHT="50" class="border border-gray-400 px-4 py-2 text-gray-800" WIDTH="150" >valor item</th>
+		</tr>
+ </thead>				
+		<tr>
+<td>
+ <label>Ingrese Detalle del Nuevo Item 3 </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="detalleitem3" placeholder="Detalle Item 3" >
+ 		</div> 
+ </td>
+<td>
+ <label>Ingrese Valor del Nuevo Item 3</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" min="1" name="valoritem3" placeholder="Valor Item 3" >
+ 		</div> 
+ </td>
+<td> <select name="agregaritem3">                    
+                      <option value="4">No agregar item </option>
+                      <option value="5">Agregar item </option>
+                    </select>
+<td>
+		</tr>	 
+		</table>
+<br><br><br>
+
+<div class="text-indigo-600 hover:text-indigo-900   py-2 px-4  text-center text-3xl  ">
+  <input type="submit" value="Agregar Presupuesto y sus Items">
+</div>
+
+</form>
+
+
+{{else}}  
+    
+
+
+
+
+
+{{#operacion.presupuestos}}
+<br><br>
+	 <div class="flex flex-col">
+      <div class="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2  align-middle inline-block min-w-0 sm:px-6 lg:px-8">
+          <div class=" shadow overflow-hidden border-b border-indigo-800 sm:rounded-lg">
+            <table class=" min-w-0 divide-y divide-indigo-800">
+              <thead>
+                <tr class="bg-indigo-400">
+                  <th class=" px-6 py-3  text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Id Presupuesto
+                  </th>
+                  <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    id item
+                  </th>
+                 <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    detalle item
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    valor item 
+                  </th>
+		
+                </tr>
+
+              </thead>
+              <tbody class=" bg-white divide-y divide-gray-200">
+           {{#each items in operacion.presupuestos}} 
+                <tr class="hover:bg-blue-100"  >    
+                  <td class=" px-6 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" text-sm text-center leading-5 font-medium text-gray-900">
+                           {{id_presupuesto}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         id presupuesto
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                         {{id_item}} 
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         id del item 
+                        </div>
+                      </div>
+                    </div>
+                  </td>                <!-- More rows... -->
+ 		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .valor total.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-sm leading-5 font-medium text-gray-900">
+                         {{this.detalle}} 
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         detalle del item
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .presupuestos.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-center text-sm leading-5 font-medium text-gray-900">
+                       {{valor}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         valor total del item
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		  
+                </tr>
+           {{/each}}   
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+
+	{{/operacion.presupuestos}}
+
+<br><br>
+
+{{/if}}
+
+
+
+
+<br><br><br>
+
+        Para saber más sobre nuestros valores presionar <a href="/nuestros-valores">acá</a>
+    </section>
+
+    <section>
+        <h2>Sobre nuestros clientes</h2>
+
+        <p>un bonito texto sobre nuestros clientes.</p>
+
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

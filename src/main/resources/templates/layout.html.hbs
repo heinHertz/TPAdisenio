@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    {{# block "titulo" }}
+    {{/block}}
+</head>
+
+<body>
+    <header>
+    <div>GeSoc</div>
+        <nav class="#header">
+            <ul class="nav_links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/entidadesBase">Entidades Base</a></li>
+                <li><a href="/entidadesJuridicas">Entidades Juridicas</a></li>
+                <li><a href="/operaciones">Operaciones</a></li>
+                <li><a href="/bandejamensajes">Bandeja De Mensajes</a></li>
+  		<li><a> <form action="/logout" method="post">
+              		  <input type="hidden" name="logout" value="logout">
+                		<button >DESLOGUEARSE</button>
+           		 </form>
+               		 </a>
+		 </li>
+            </ul>
+        </nav>
+    </header>
+	<main>
+            {{# block "contenido" }}
+            {{/block}}
+	</main>
+	<footer class="fondo-gris">
+        <div>Copyright 2020 GeSoc</div>
+	</footer>
+</body>
+
+</html>

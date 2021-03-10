@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+			<class>dominio.notificacion.ReporteGastos</class>
+			<class>dominio.entidades.Categoria</class>
+			<class>dominio.entidades.ReglaLimitarADosEntidadBase</class>
+			<class>dominio.entidades.ReglaLimitarADosOperaciones</class>
+			<class>dominio.entidades.ReglaLimitarAgregadoEntidadesBase</class>
+			<class>dominio.entidades.ReglaLimitarAgregadoOperaciones</class>
+			<class>dominio.entidades.TipoEmpresa</class>
+			<class>dominio.entidades.EntidadJuridica</class>
+			<class>dominio.entidades.EntidadBase</class>
+			<class>api.Ciudad</class>
+			<class>api.Provincia</class>
+			<class>api.Moneda</class>
+			<class>dominio.operacion.DireccionPostal</class>
+			<class>dominio.operacion.Item</class>
+			<class>dominio.operacion.Documento</class>
+			<class>dominio.operacion.Operacion</class>
+			<class>dominio.operacion.Presupuesto</class>
+			<class>dominio.operacion.Proveedor</class>
+			<class>dominio.usuario.Usuario</class>
+			<class>dominio.usuario.TipoUsuario</class>
+			<class>dominio.notificacion.BandejaMensajes</class>
+
+			
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class"/>
+
+			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+			
+	 <!--		 <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/dds" />
+            <property name="hibernate.connection.username" value="root" />
+            <property name="hibernate.connection.password" value="root" />    -->
+			
+			<property name="hibernate.connection.url" value="jdbc:mysql://ddsgesoc.mysql.database.azure.com:3306/dds?serverTimezone=UTC" />
+			<property name="hibernate.connection.username" value="dds@ddsgesoc" />
+			<property name="hibernate.connection.password" value="TPfinal6" /> 
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="use_sql_comments" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update" />   
+			
+	 
+			
+			
+        </properties>
+
+    </persistence-unit>
+
+</persistence> 

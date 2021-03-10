@@ -1,0 +1,27 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Agregar Entidad Base</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section class="section-formulario">
+        <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-3xl">
+            Agregar Nueva Entidad Base
+        </h2>
+        <br>
+        <form class="formulario-ej" action="/entidadesBase" method="POST">
+            <div>
+                <label>Nombre Ficticio:</label>
+                <input type="text" name="nombre" placeholder="Ingrese el nombre" required>
+            </div>
+            <div>
+                <label>Descripcion:</label>
+                <input type="text" name="descripcion" placeholder="ingrese la descripcion" required>
+            </div>
+
+            <button>Agregar Entidad</button>
+        </form>
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

@@ -1,0 +1,146 @@
+{{# partial "titulo" }}
+    <title>GeSoc - Home</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+    <section class="fondo-gris">
+      
+ 	<div class="-my-2  text-xl  overflow-x-auto sm:-mx-6 lg:-mx-8">
+    Listado de Todas Las Operaciones
+    </div>
+  <br><br><br>
+       
+          
+		
+  <div class="flex flex-col">
+      <div class="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2  align-middle inline-block min-w-0 sm:px-6 lg:px-8">
+          <div class=" shadow overflow-hidden border-b border-indigo-800 sm:rounded-lg">
+            <table class=" min-w-0 divide-y divide-indigo-800">
+              <thead>
+                <tr class="bg-blue-200">
+                  <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Detalles
+                  </th>
+                 <th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Valor Total
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Validar
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Etiqueta
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                    Medio de Pago
+                  </th>
+		<th class=" px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-teal-900 uppercase tracking-wider">
+                   Ver
+                  </th>
+                </tr>
+              </thead>
+              <tbody class=" bg-white divide-y divide-gray-200">
+              {{#operaciones}}
+                <tr class="hover:bg-blue-100"  >      
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- ... -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                          {{detalle}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         detalle
+                        </div>
+                      </div>
+                    </div>
+                  </td>                <!-- More rows... -->
+ 		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .valor total.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-sm leading-5 font-medium text-gray-900">
+                         {{valorTotal}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         valor total
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- .presupuestos.. -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="truncate w-24 ml-0 text-center text-sm leading-5 font-medium text-gray-900">
+                         {{cantidadPresupuestosCompra}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         Presupuestos para Validar
+                        </div>
+                      </div>
+                    </div>
+                  </td>       
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- etiqueta -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                          {{etiqueta}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         etiqueta
+                        </div>
+                      </div>
+                    </div>
+                  </td>      
+		<td class=" px-6 py-4 whitespace-no-wrap">      <!-- medio de pago -->
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                       <div class=" truncate w-24 text-sm leading-5 font-medium text-gray-900">
+                          {{medioPago}}
+                        </div>
+                        <div class="text-sm leading-5 text-gray-500">
+                         medios de pago
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                 
+                  <td class="bg-green-100 px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+                    <a href="/operaciones/{{id_operacion}}" class="text-indigo-600 hover:text-indigo-900">Ver Detalles</a>
+                  </td>
+                </tr>
+              {{/operaciones}}
+
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<br><br><br>
+<div class="inline-flex rounded-md shadow">
+        <a href="/operaciones/cargar" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+            Agregar Operacion
+        </a>
+</div>
+&nbsp; &nbsp; &nbsp;
+
+
+<br><br><br><br>
+
+        Para saber más sobre nuestros valores presionar <a href="/nuestros-valores">acá</a>
+    </section>
+
+    <section>
+        <h2>Sobre nuestros clientes</h2>
+
+        <p>un bonito texto sobre nuestros clientes.</p>
+
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}
